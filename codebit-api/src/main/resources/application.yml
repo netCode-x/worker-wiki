@@ -1,0 +1,59 @@
+# Spring 核心配置
+spring:
+  application:
+    name: codebit-api      # 应用名称，用于服务注册、日志标识等
+
+  # 数据源配置（连接数据库）
+  datasource:
+    url: jdbc:mysql://192.168.100.101:3306/codebit?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root         # 数据库用户名
+    password: 1234         # 数据库密码
+    driver-class-name: com.mysql.cj.jdbc.Driver  # MySQL 8.0 驱动类
+
+  # 激活的环境配置（profile），此处为 sit（测试环境）
+  profiles:
+    active: sit
+
+  # # JPA 自动建表：update 模式会根据实体类自动更新表结构，开发时很方便 ,显示 SQL 语句，便于调试,指定 Hibernate 方言为 MySQL8，优化 SQL 生成
+  jpa:
+    # 数据库方言：指定使用 MySQL 5 InnoDB 引擎方言
+    #database-platform: org.hibernate.dialect.MySQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true                     # 控制台打印 SQL 语句
+    properties:
+      hibernate:
+        format_sql: true               # 格式化输出的 SQL，便于阅读
+        use_sql_comments: true         # 在 SQL 中添加注释，说明生成原因
+        generate_statistics: true      # 输出 Hibernate 执行统计信息（如耗时、命中率）
+        jdbc:
+          batch_size: 100              # 批量操作时每批插入/更新的记录数
+          fetch_size: 100              # 查询时每次从数据库获取的记录数
+          time_zone:  UTC              # 设置时区
+        dialect: org.hibernate.dialect.MySQL8Dialect  # 兼容 MySQL 5 InnoDB 的方言
+
+# 日志配置
+logging:
+  config: classpath:log4j2-spring.xml   # 指定 log4j2 配置文件的位置
+  level:                                 # 日志级别控制
+    root: INFO                           # 全局日志级别
+    javax.activation: info
+    org.apache.catalina: INFO
+    org.apache.commons.beanutils.converters: INFO
+    org.apache.coyote.http11.Http11Processor: INFO
+    org.apache.http: INFO
+    org.apache.tomcat: INFO
+    org.springframework: INFO
+    com.chinamobile.cmss.bdpaas.resource.monitor: DEBUG  # 自定义包输出 DEBUG 级别日志
+
+
+# JWT 配置
+jwt:
+  # 签名密钥：用于 JWT 的 HMAC-SHA256 签名
+  # 生产环境建议使用更复杂的密钥（32 位以上随机字符串）
+  # 可以使用: openssl rand -base64 32 生成
+  secret: yourSecretKeyForJwtTokenGeneration2026SpringBoot
+
+  # Token 过期时间：86400000 毫秒 = 24 小时
+  # 可根据安全需求调整（通常 30 分钟 ~ 7 天）
+  expiration: 86400000
