@@ -18,14 +18,17 @@ public class AboutCacheServiceImpl {
 
     private final ObjectMapper objectMapper;
 
+
     private static final String CACHE_KEY = "about:page";
     private static final long CACHE_TTL = 3600;
 
     public AboutResponse getAboutFromCache() {
         try {
+
             Object cached = redisService.get(CACHE_KEY);
+
             if (cached != null) {
-                log.debug("从缓存获取关于页面信息");
+                log.debug("从缓存获取关于页面信息记录");
                 if (cached instanceof AboutResponse) {
                     return (AboutResponse) cached;
                 }
