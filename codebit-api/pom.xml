@@ -165,13 +165,20 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
+                    <mainClass>com.codebit.api.CodeBitApplication</mainClass>
                     <addResources>true</addResources>
                 </configuration>
             </plugin>
@@ -183,16 +190,14 @@
                     <source>21</source>
                     <target>21</target>
                     <compilerArgs>
-                        <arg>-Amapstruct.verbose=true</arg>  <!-- 开启 MapStruct 详细日志 -->
+                        <arg>-Amapstruct.verbose=true</arg>
                     </compilerArgs>
                     <annotationProcessorPaths>
-                        <!-- Lombok 注解处理器（需放在 MapStruct 前面） -->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                             <version>${lombok.version}</version>
                         </path>
-                        <!-- MapStruct 注解处理器 -->
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
@@ -201,7 +206,6 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 

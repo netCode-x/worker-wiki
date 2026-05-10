@@ -14,8 +14,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 
 @Configuration
-@EnableWebSecurity   // 启用 Spring Security 的 Web 安全支持，自动配置安全过滤链
-@RequiredArgsConstructor // Lombok：为 final 字段生成构造器，实现依赖注入（比 @Autowired 更推荐）
+@EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
     // 通过构造器注入 JWT 认证过滤器
     // JwtAuthenticationFilter 负责拦截请求、解析 Token、设置认证上下文

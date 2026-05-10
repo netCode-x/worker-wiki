@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 public class TimeUtil {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    private static final String SITE_START_DATE = "2024-01-01";
+    private static final String SITE_START_DATE = "2026-01-01";
 
     public static String calculateBuildDays() {
         LocalDate startDate = LocalDate.parse(SITE_START_DATE);
