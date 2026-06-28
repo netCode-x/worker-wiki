@@ -17,8 +17,8 @@ public class RegisterRequest {
     @Size(min = 6, max = 20, message = "密码长度为6-20位")
     private String password;
 
-    @Schema(description = "昵称")
-    private String nickName;
+   /* @Schema(description = "昵称")
+    private String nickName;*/
 
     @Email(message = "邮箱格式不正确")
     private String email;

@@ -34,7 +34,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final UserDetailsService userDetailsService;  // 自定义的用户详情服务
 
     /**
-     * 重写 shouldNotFilter 方法（更优雅）
+     * 重写 shouldNotFilter 方法（更优雅） ,  核心作用是告诉securtychainfilter 放行, 不再继续接下来的校验
      * @param request
      * @return
      * @throws ServletException
@@ -42,8 +42,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
 
-        String path = request.getRequestURI();
-        return path.equals("/api/auth/register");
+       // String path = request.getRequestURI();
+        // 使用 getServletPath() 确保匹配的是应用内部的路径，不受部署上下文影响
+        String path = request.getServletPath();
+        return path.equals("/api/auth/register") || path.startsWith("/public/");
     }
 
     @Override
@@ -51,12 +53,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
-        /// 排除该url 不经过认证
-        String requestURI = request.getRequestURI();
-        if (requestURI.equals("/api/auth/register")){
-            filterChain.doFilter(request,response);
-            return;
-        }
+
         // 1. 从请求头中获取 Authorization ；标准 JWT 携带方式: Authorization: Bearer <token>
         String authHeader = request.getHeader("Authorization");
 

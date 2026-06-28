@@ -52,7 +52,7 @@ public class SecurityConfig {
                         // - 配置哪些 URL 路径允许公开访问（无需认证）
                         // - 这些路径不需要携带 Token 就能访问
                         // - 原因：注册、登录接口必须公开，否则用户无法登录
-                        //        Swagger 文档也需要公开，方便前端查看 API
+                        // - Swagger 文档也需要公开，方便前端查看 API
                         .requestMatchers(
                                 "/api/**",
                                 "/swagger-ui/**",

@@ -46,6 +46,13 @@ logging:
     org.springframework: INFO
     com.chinamobile.cmss.bdpaas.resource.monitor: DEBUG  # 自定义包输出 DEBUG 级别日志
 
+springdoc:
+  packages-to-scan: com.codebit.api.controller
+  api-docs:
+    resolve-schema-properties: true
+server:
+  port: 8888
+
 
 # JWT 配置
 jwt:

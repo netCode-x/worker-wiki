@@ -44,7 +44,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.17</version>
         </dependency>
         <!-- Spring Boot 参数校验：基于 Bean Validation（如 Hibernate Validator）提供便捷的校验功能，
         常用于 Controller 参数验证 -->

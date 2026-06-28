@@ -39,7 +39,6 @@ public class UserServiceImpl  implements UserService {
     @Transactional
     public AuthResponse register(RegisterRequest request) {
 
-        log.info("邮箱获取： email ={}" + request.getEmail());
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new BusinessException(409, "用户名已存在");
         }
