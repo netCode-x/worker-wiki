@@ -1,6 +1,7 @@
 package com.codebit.api.controller;
 
-import com.codebit.api.dto.*;
+import com.codebit.api.dto.aboutDto.*;
+import com.codebit.api.dto.likeDto.LikeResponse;
 import com.codebit.api.service.impl.AboutServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

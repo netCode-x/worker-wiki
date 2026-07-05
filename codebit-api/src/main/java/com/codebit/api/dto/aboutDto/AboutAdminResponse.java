@@ -1,25 +1,29 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.aboutDto;
 
-import jakarta.validation.constraints.NotBlank;
+import com.codebit.api.dto.footerDto.FootprintDto;
+import com.codebit.api.dto.skillDto.SkillDto;
+import com.codebit.api.dto.socialLinkDto.SocialLinkDto;
+import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
-public class AboutUpdateRequest {
+@Builder
+public class AboutAdminResponse {
     private String title;
     private String subtitle;
-
-    @NotBlank(message = "内容不能为空")
     private String content;
-
     private String avatarUrl;
     private String coverImageUrl;
     private String email;
     private String location;
     private Integer status;
-    private String changeReason;
     private List<SocialLinkDto> socialLinks;
     private List<SkillDto> skills;
     private List<FootprintDto> footprints;
+    private Integer version;
+    private LocalDateTime updatedAt;
+    private String updatedBy;
 }

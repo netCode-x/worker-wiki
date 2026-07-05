@@ -1,7 +1,7 @@
 package com.codebit.api.controller;
 
-import com.codebit.api.dto.ForgetPasswordRequest;
-import com.codebit.api.dto.ResetPasswordRequest;
+import com.codebit.api.dto.likeDto.LikeResponse;
+import com.codebit.api.dto.footerDto.ForgetPasswordRequest;
 import com.codebit.api.dto.Result;
 import com.codebit.api.service.PasswordResetService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,7 +30,7 @@ public class PasswordResetController {
 
     @RequestMapping(path = "/reset",method = RequestMethod.POST)
     @Operation(summary = "重置密码")
-    public Result<Void> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
+    public Result<Void> resetPassword(@Valid @RequestBody LikeResponse.ResetPasswordRequest request) {
         log.info("提交密码重置: email={}", request.getEmail());
         passwordResetService.resetPassword(request);
         return Result.success(null);

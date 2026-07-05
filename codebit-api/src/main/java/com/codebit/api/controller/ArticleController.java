@@ -2,6 +2,7 @@ package com.codebit.api.controller;
 
 import com.codebit.api.config.CustomUserDetails;
 import com.codebit.api.dto.*;
+import com.codebit.api.dto.articleDto.*;
 import com.codebit.api.service.ArticleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

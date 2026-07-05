@@ -3,6 +3,7 @@ package com.codebit.api.service.impl;
 
 import com.codebit.api.converter.BuildResponseConverter;
 import com.codebit.api.dto.*;
+import com.codebit.api.dto.articleDto.*;
 import com.codebit.api.entity.Article;
 import com.codebit.api.entity.ArticleBody;
 import com.codebit.api.entity.User;
@@ -58,7 +59,7 @@ public class ArticleServiceImpl implements ArticleService {
         String contentHtml = markdownService.toHtml(req.getContent());
 
         String summary = req.getSummary();
-        if (summary != null || summary.trim().isEmpty()) {
+        if (summary == null || summary.trim().isEmpty()) {
             summary = markdownService.toPlainText(req.getContent(), 150);
         }
         Article article = Article.builder()
@@ -71,8 +72,6 @@ public class ArticleServiceImpl implements ArticleService {
                 .viewCounts(0)
                 .weigth(0)
                 .build();
-
-        log.info("save article ");
         Article savedArticle = articleRepository.save(article);
 
         ArticleBody articleBody = ArticleBody.builder()
@@ -84,10 +83,9 @@ public class ArticleServiceImpl implements ArticleService {
         articleBodyRepository.save(articleBody);
 
         savedArticle.setArticleBody(articleBody);
-        log.info("文章创建成功: id={}, title={}", savedArticle.getId(), savedArticle.getTitle());
 
         User author = userRepository.findById(authorId)
-                .orElse(null);
+                .orElseThrow(() -> new BusinessException("作者不存在"));
 
         return articleConverter.ArticleConverterResponse(savedArticle, articleBody, author);
     }

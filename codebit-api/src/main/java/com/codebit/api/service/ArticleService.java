@@ -1,6 +1,7 @@
 package com.codebit.api.service;
 
 import com.codebit.api.dto.*;
+import com.codebit.api.dto.articleDto.*;
 
 public interface ArticleService {
 

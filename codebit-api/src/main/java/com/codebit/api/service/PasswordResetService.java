@@ -1,13 +1,13 @@
 package com.codebit.api.service;
 
-import com.codebit.api.dto.ForgetPasswordRequest;
-import com.codebit.api.dto.ResetPasswordRequest;
+import com.codebit.api.dto.likeDto.LikeResponse;
+import com.codebit.api.dto.footerDto.ForgetPasswordRequest;
 
 public interface PasswordResetService {
 
 
     void sendResetCode(ForgetPasswordRequest request);
 
-    void resetPassword(ResetPasswordRequest request);
+    void resetPassword(LikeResponse.ResetPasswordRequest request);
 
 }

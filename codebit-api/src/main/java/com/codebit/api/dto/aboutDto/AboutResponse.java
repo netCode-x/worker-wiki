@@ -1,5 +1,8 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.aboutDto;
 
+import com.codebit.api.dto.footerDto.FootprintPublicDto;
+import com.codebit.api.dto.skillDto.SkillPublicDto;
+import com.codebit.api.dto.socialLinkDto.SocialLinkPublicDto;
 import lombok.Builder;
 import lombok.Data;
 

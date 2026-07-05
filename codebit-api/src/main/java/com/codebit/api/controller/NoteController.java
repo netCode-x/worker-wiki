@@ -1,7 +1,10 @@
 package com.codebit.api.controller;
 
 import com.codebit.api.dto.*;
-import com.codebit.api.entity.Note;
+import com.codebit.api.dto.noteDto.NoteCreateRequest;
+import com.codebit.api.dto.noteDto.NoteQueryRequest;
+import com.codebit.api.dto.noteDto.NoteResponse;
+import com.codebit.api.dto.noteDto.NoteUpdateRequest;
 import com.codebit.api.service.NoteService;
 import com.codebit.api.config.CustomUserDetails;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,4 +1,4 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.loginDto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

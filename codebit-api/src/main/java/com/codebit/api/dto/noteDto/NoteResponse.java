@@ -1,4 +1,4 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.noteDto;
 
 import lombok.Builder;
 import lombok.Data;

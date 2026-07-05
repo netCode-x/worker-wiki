@@ -1,4 +1,4 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.footerDto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

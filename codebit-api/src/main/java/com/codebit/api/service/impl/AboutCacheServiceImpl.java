@@ -1,6 +1,6 @@
 package com.codebit.api.service.impl;
 
-import com.codebit.api.dto.AboutResponse;
+import com.codebit.api.dto.aboutDto.AboutResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

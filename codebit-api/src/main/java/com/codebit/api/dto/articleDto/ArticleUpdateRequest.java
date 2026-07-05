@@ -1,4 +1,4 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.articleDto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

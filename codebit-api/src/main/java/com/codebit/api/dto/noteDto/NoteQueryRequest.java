@@ -1,4 +1,4 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.noteDto;
 
 import jakarta.validation.constraints.Min;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.authDto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -12,21 +12,21 @@ import lombok.Data;
  */
 
 @Data
-@AllArgsConstructor  // 方便创建响应对象，避免逐个 set
-@Schema(description = "认证请求")
+@AllArgsConstructor
+@Schema(description = "认证响应")
 public class AuthResponse {
 
     @Schema(description = "token")
-    private String token;      // JWT Token
+    private String token;
 
     @Schema(description = "username")
-    private String username;   // 用户名
+    private String username;
 
     @Schema(description = "userId")
-    private Long userId;       // 用户ID
+    private Long userId;
 
     @Schema(description = "expirsIn")
-    private Long expiresIn;    // 过期时间（毫秒）
+    private Long expiresIn;
 
 
 }

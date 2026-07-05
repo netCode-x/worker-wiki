@@ -1,7 +1,7 @@
 package com.codebit.api.service.impl;
 
-import com.codebit.api.dto.ForgetPasswordRequest;
-import com.codebit.api.dto.ResetPasswordRequest;
+import com.codebit.api.dto.likeDto.LikeResponse;
+import com.codebit.api.dto.footerDto.ForgetPasswordRequest;
 import com.codebit.api.entity.User;
 import com.codebit.api.repository.UserRepository;
 import com.codebit.api.service.MailService;
@@ -73,7 +73,7 @@ public class PasswordResetServiceImpl implements PasswordResetService {
     }
 
     @Transactional
-    public void resetPassword(ResetPasswordRequest request) {
+    public void resetPassword(LikeResponse.ResetPasswordRequest request) {
         String email = request.getEmail();
         String code = request.getEmailCode();
         String newPassword = request.getNewPassword();

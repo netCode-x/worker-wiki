@@ -1,8 +1,8 @@
 package com.codebit.api.controller;
 
-import com.codebit.api.dto.AuthResponse;
-import com.codebit.api.dto.LoginRequest;
-import com.codebit.api.dto.RegisterRequest;
+import com.codebit.api.dto.authDto.AuthResponse;
+import com.codebit.api.dto.loginDto.LoginRequest;
+import com.codebit.api.dto.loginDto.RegisterRequest;
 import com.codebit.api.dto.Result;
 import com.codebit.api.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;

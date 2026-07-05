@@ -6,7 +6,7 @@ spring:
     host: smtp.yeah.net          # 邮箱服务器（@yeah.net邮箱）
     port: 465
     username: yangkaihu@yeah.net
-    password:
+    password: RUKqzamdJP8vWkdu
 
 
   data:

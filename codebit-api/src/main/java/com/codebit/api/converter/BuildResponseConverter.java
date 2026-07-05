@@ -1,7 +1,7 @@
 package com.codebit.api.converter;
 
-import com.codebit.api.dto.ArticleResponse;
-import com.codebit.api.dto.NoteResponse;
+import com.codebit.api.dto.articleDto.ArticleResponse;
+import com.codebit.api.dto.noteDto.NoteResponse;
 import com.codebit.api.entity.Article;
 import com.codebit.api.entity.ArticleBody;
 import com.codebit.api.entity.Note;

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * @Auther: yangkaihu
+ * @Auther: yangkaihu   插件 atom material icons
  * @Date: 2026/4/2 星期四
  * @Description:
  * @VERSON: 17

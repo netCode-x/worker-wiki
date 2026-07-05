@@ -1,4 +1,4 @@
-package com.codebit.api.dto;
+package com.codebit.api.dto.skillDto;
 
 import lombok.Builder;
 import lombok.Data;

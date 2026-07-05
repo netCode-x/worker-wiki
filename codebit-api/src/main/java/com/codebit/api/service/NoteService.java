@@ -1,8 +1,10 @@
 package com.codebit.api.service;
 
 import com.codebit.api.dto.*;
-import com.codebit.api.entity.Note;
-import org.springframework.web.bind.annotation.PathVariable;
+import com.codebit.api.dto.noteDto.NoteCreateRequest;
+import com.codebit.api.dto.noteDto.NoteQueryRequest;
+import com.codebit.api.dto.noteDto.NoteResponse;
+import com.codebit.api.dto.noteDto.NoteUpdateRequest;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package com.codebit.api.service.impl;
 
-import com.codebit.api.dto.AuthResponse;
-import com.codebit.api.dto.LoginRequest;
-import com.codebit.api.dto.RegisterRequest;
+import com.codebit.api.dto.authDto.AuthResponse;
+import com.codebit.api.dto.loginDto.LoginRequest;
+import com.codebit.api.dto.loginDto.RegisterRequest;
 import com.codebit.api.entity.User;
 import com.codebit.api.repository.UserRepository;
 import com.codebit.api.service.UserService;

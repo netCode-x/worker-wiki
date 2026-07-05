@@ -2,6 +2,10 @@ package com.codebit.api.service.impl;
 
 import com.codebit.api.converter.BuildResponseConverter;
 import com.codebit.api.dto.*;
+import com.codebit.api.dto.noteDto.NoteCreateRequest;
+import com.codebit.api.dto.noteDto.NoteQueryRequest;
+import com.codebit.api.dto.noteDto.NoteResponse;
+import com.codebit.api.dto.noteDto.NoteUpdateRequest;
 import com.codebit.api.entity.Note;
 import com.codebit.api.entity.User;
 import com.codebit.api.repository.NoteRepository;
