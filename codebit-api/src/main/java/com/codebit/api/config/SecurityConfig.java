@@ -59,7 +59,8 @@ public class SecurityConfig {
                                 "/swagger-ui.html",
                                 "/swagger-resources/**",
                                 "/webjars/**",
-                                "/v3/api-docs/**"
+                                "/v3/api-docs/**",
+                                "/actuator/**"
                         ).permitAll()
                         // .anyRequest().authenticated() 的作用：
                         // - 所有未在上面匹配到的请求都需要认证
